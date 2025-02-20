@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+struct Student {
+    string name;
+    int roll;
+    float marks;
+};
+
+vector<Student> students;
+
+void addStudent() {
+    Student s;
+    cout << "Enter name, roll number, and marks: ";
+    cin >> s.name >> s.roll >> s.marks;
+    students.push_back(s);
+}
+
+void displayStudents() {
+    for (const auto& s : students) {
+        cout << "Name: " << s.name << ", Roll No: " << s.roll << ", Marks: " << s.marks << endl;
+    }
+}
+
+int main() {
+    addStudent();
+    displayStudents();
+    return 0;
+}
